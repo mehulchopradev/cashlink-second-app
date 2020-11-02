@@ -1,6 +1,12 @@
 <div>
-    <input type="text" placeholder="Enter a no.">
+    <input type="number" class="num" placeholder="Enter a no." [(ngModel)]="num">
 </div>
 <div>
-    <button>Generate Even Series</button>
+    <button type="button" class="btn" (click)="onGenerate()">Generate Even Series</button>
+</div>
+<div class="result" *ngIf="result">
+    The result is {{result | sep: '|'}}
+</div>
+<div class="computationDate" *ngIf="computationDate">
+    The date when this was computed is {{computationDate}}
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeriesService } from '../series.service';
 
 @Component({
   selector: 'app-series',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesComponent implements OnInit {
 
-  constructor() { }
+  num: number;
+
+  result: number[];
+
+  computationDate: string;
+
+  constructor(private seriesService: SeriesService) { }
 
   ngOnInit(): void {
+  }
+
+  onGenerate(): void {
+    const { num } = this;
+    const output = this.seriesService.generateEvenSeries(num);
+
+    this.result = output.result;
+    this.computationDate = output.computationDate;
   }
 
 }
