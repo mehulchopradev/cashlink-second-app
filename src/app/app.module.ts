@@ -14,7 +14,7 @@ import { SepPipe } from './sep.pipe';
     SepPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
   ],
